@@ -8,37 +8,53 @@ public class Boss : MonoBehaviour
 {
     public float speed = 1f;
     private int direction = -1;
-    private GameObject desk;
     public TMP_Text stateText;
+    public float targetTime = 0.5f;
+    public float targetTimeCopy;
+    public bool isOnCheckPoint = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        desk = GameObject.FindGameObjectWithTag("ComputerDesk");
-        EventManager.Check += check;
-        EventManager.UnCheck += unCheck;
+        targetTimeCopy = targetTime;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.position += new Vector3(speed * Time.deltaTime * direction, 0, 0);
-        float dist = Vector3.Distance(transform.position, desk.transform.position);
-        if (dist > 10)
+
+        targetTime -= Time.deltaTime;
+
+        if (targetTime <= 0.0f)
         {
             direction *= -1;
+            targetTime = targetTimeCopy;
+        }
+
+        if (isOnCheckPoint)
+        {
+            stateText.text = "Checking";
+        }
+        else
+        {
+            stateText.text = "Walking";
         }
     }
 
-    
-    private void check()
+    private void OnTriggerEnter(Collider other)
     {
-
-        stateText.text = "Checking";
-    }
-    private void unCheck()
-    {
-        stateText.text = "Walking";
+        if (other.gameObject.tag == "BossCheckPoint")
+        {
+            isOnCheckPoint = true;
+        }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "BossCheckPoint")
+        {
+            isOnCheckPoint = false;
+        }
+    }
 }

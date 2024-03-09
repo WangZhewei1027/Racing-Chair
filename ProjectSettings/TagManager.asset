@@ -8,6 +8,8 @@ TagManager:
   - ComputerDesk
   - UI
   - 2D
+  - PlayerCheckPoint
+  - BossCheckPoint
   layers:
   - Default
   - TransparentFX
