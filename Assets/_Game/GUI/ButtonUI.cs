@@ -19,8 +19,7 @@ public class ButtonUI : MonoBehaviour
 
     public void RestartGame()
     {
-        string scene = SceneManager.GetActiveScene().name;
         print("restart");
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene("SampleScene");
     }
 }

@@ -30,10 +30,8 @@ public class Boss : MonoBehaviour
         }
     }
 
-    
     private void check()
     {
-
         stateText.text = "Checking";
     }
     private void unCheck()
