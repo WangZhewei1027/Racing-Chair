@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerSwitchMode2 : MonoBehaviour
 {
     public bool isOnCheckPoint = false;
-    public bool isWorking = false;
+    public static bool isWorking = false;
     public TMP_Text stateText;
 
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class PlayerSwitchMode2 : MonoBehaviour
     {
         if (isOnCheckPoint)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.M))
             {
                 isWorking = !isWorking;
             }
@@ -33,7 +33,7 @@ public class PlayerSwitchMode2 : MonoBehaviour
         {
             if (isOnCheckPoint)
             {
-                stateText.text = "Press E";
+                stateText.text = "Press M";
             }
             else
             {

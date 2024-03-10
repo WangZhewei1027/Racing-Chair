@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerSwitchMode : MonoBehaviour
 {
     public bool isOnCheckPoint = false;
-    public bool isWorking = false;
+    public static bool isWorking = false;
     public TMP_Text stateText;
 
     // Start is called before the first frame update

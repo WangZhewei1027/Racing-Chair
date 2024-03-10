@@ -12,11 +12,14 @@ public class Boss : MonoBehaviour
     public float targetTime = 0.5f;
     public float targetTimeCopy;
     public bool isOnCheckPoint = false;
+    public GameObject player, player2, target;
 
     // Start is called before the first frame update
     void Start()
     {
         targetTimeCopy = targetTime;
+        player = GameObject.FindGameObjectWithTag("Player");
+        player2 = GameObject.FindGameObjectWithTag("Player2");
     }
 
     // Update is called once per frame
@@ -35,10 +38,36 @@ public class Boss : MonoBehaviour
         if (isOnCheckPoint)
         {
             stateText.text = "Checking";
+            if (Vector3.Distance(player.transform.position, this.transform.position) < 3)
+            {
+                if (!PlayerSwitchMode.isWorking)
+                {
+                    CanvasController.whoWin = "Player1 caught by Boss, Player2";
+                    EventManager.Win();
+                }
+            }
+            if (Vector3.Distance(player2.transform.position, this.transform.position) < 3)
+            {
+                if (!PlayerSwitchMode2.isWorking)
+                {
+                    CanvasController.whoWin = "Player2 caught by Boss, Player1";
+                    EventManager.Win();
+                }
+            }
         }
         else
         {
             stateText.text = "Walking";
+        }
+
+        if(Vector3.Distance(player.transform.position,this.transform.position)< Vector3.Distance(player.transform.position, this.transform.position))
+        {
+            target = player;
+        }
+
+        if(Vector3.Distance(target.transform.position, this.transform.position)<30)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 1);
         }
     }
 

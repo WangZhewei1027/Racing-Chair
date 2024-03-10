@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     public float maxVelocity = 20;
     public TMP_Text stateText;
+    private Animator mAnimator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        mAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -22,18 +24,22 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.A))
             {
                 rb.AddForce(new Vector3(force * -1, 0, 0));
+                mAnimator.SetTrigger("Racing");
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
                 rb.AddForce(new Vector3(force, 0, 0));
+                mAnimator.SetTrigger("Racing");
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
                 rb.AddForce(new Vector3(0, 0, force * -1));
+                mAnimator.SetTrigger("Racing");
             }
             if (Input.GetKeyDown(KeyCode.W))
             {
                 rb.AddForce(new Vector3(0, 0, force));
+                mAnimator.SetTrigger("Racing");
             }
             if (transform.position.y < -10)
             {
@@ -44,6 +50,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity *= 0.99f;
             }
+        }
+        if (stateText.text == "Working")
+        {
+            mAnimator.SetTrigger("Working");
+        }
+        else
+        {
+            mAnimator.SetTrigger("Idle");
         }
     }
 }
