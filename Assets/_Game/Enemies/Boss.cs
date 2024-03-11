@@ -60,15 +60,19 @@ public class Boss : MonoBehaviour
             stateText.text = "Walking";
         }
 
-        if(Vector3.Distance(player.transform.position,this.transform.position)< Vector3.Distance(player.transform.position, this.transform.position))
+        if(Vector3.Distance(player.transform.position,this.transform.position)< Vector3.Distance(player2.transform.position, this.transform.position))
         {
             target = player;
         }
-
-        if(Vector3.Distance(target.transform.position, this.transform.position)<30)
+        else
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 1);
+            target = player2;
         }
+
+        //if(Vector3.Distance(target.transform.position, this.transform.position)<30)
+        //{
+        //    transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 1);
+        //}
     }
 
     private void OnTriggerEnter(Collider other)

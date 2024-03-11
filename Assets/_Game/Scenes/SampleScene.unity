@@ -2804,7 +2804,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   time: 0.10000000149011612
   minimalOpacity: 0.1
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 2020750162}
 --- !u!4 &338762196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3454286156110799436, guid: 31885b8a36d2d4f58b3a2eee2cb87aea,
@@ -27772,7 +27772,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   time: 0.10000000149011612
   minimalOpacity: 0.1
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 866502550}
 --- !u!4 &2068942356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1844010696727526802, guid: cf2df10abcc10424e84c1020eb3022b8,
