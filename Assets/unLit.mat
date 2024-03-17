@@ -8,9 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: unLit
-  m_Shader: {fileID: -6465566751694194690, guid: 384a21d083fd249c7a1073a76133dafc,
-    type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: 384a21d083fd249c7a1073a76133dafc,
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Parent: {fileID: -8067726398312463513, guid: 834f5707fb526435485e714e3aedcb22,
     type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -19,15 +18,22 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - _QueueControl: 0
+    m_Colors:
+    - _Color: {r: 0.952921, g: 0.7986674, b: 0.66002476, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5549452348259643693
 MonoBehaviour:

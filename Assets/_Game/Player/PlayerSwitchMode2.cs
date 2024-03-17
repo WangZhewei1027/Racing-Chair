@@ -58,6 +58,4 @@ public class PlayerSwitchMode2 : MonoBehaviour
         }
     }
 
-
-
 }

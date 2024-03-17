@@ -57,7 +57,4 @@ public class PlayerSwitchMode : MonoBehaviour
             isOnCheckPoint = false;
         }
     }
-
-
-
 }
